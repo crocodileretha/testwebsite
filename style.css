@@ -4,7 +4,7 @@
   --white: #ffffff;
   --sage: #8fae9e;
   --navy: #0f1c2e;
-  --muted: #b5b5b5;
+  --muted: #9da3a6;
 }
 
 * {
@@ -14,70 +14,127 @@
 }
 
 body {
-  background: var(--black);
+  background: radial-gradient(circle at top, #111 0%, #000 70%);
   color: var(--white);
   font-family: 'Space Grotesk', sans-serif;
-  height: 100vh;
+  min-height: 100vh;
 }
 
+/* HOME */
 .home {
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: center;
 }
 
 .site-title {
   font-family: 'Special Elite', monospace;
-  font-size: 3.5rem;
-  letter-spacing: 2px;
-  margin-bottom: 40px;
+  font-size: 3.8rem;
+  letter-spacing: 3px;
+  margin-bottom: 50px;
 }
 
 .home-nav {
   display: flex;
-  gap: 40px;
+  gap: 50px;
 }
 
 .home-nav a {
-  text-decoration: none;
   color: var(--muted);
-  font-size: 0.9rem;
+  text-decoration: none;
   letter-spacing: 2px;
-  padding-bottom: 6px;
+  font-size: 0.85rem;
   border-bottom: 1px solid transparent;
-  transition: all 0.3s ease;
+  padding-bottom: 6px;
 }
 
 .home-nav a:hover {
   color: var(--sage);
-  border-bottom: 1px solid var(--sage);
+  border-color: var(--sage);
 }
 
-.coming-soon {
+/* PORTFOLIO */
+.portfolio-grid {
   height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
-.coming-soon h1 {
-  font-size: 2.2rem;
+.portfolio-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: var(--white);
+  background-size: cover;
+  background-position: center;
+}
+
+.essays {
+  background:
+    linear-gradient(to bottom, rgba(15,28,46,0.7), rgba(0,0,0,0.9)),
+    url('https://images.unsplash.com/photo-1519682337058-a94d519337bc');
+}
+
+.photography {
+  background:
+    linear-gradient(to bottom, rgba(143,174,158,0.3), rgba(0,0,0,0.9)),
+    url('https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f');
+}
+
+.overlay {
+  text-align: center;
+  border: 1px solid rgba(143,174,158,0.3);
+  padding: 40px;
+  backdrop-filter: blur(2px);
+}
+
+.overlay h2 {
+  letter-spacing: 3px;
   margin-bottom: 10px;
 }
 
-.coming-soon p {
+.overlay p {
+  font-size: 0.9rem;
   color: var(--muted);
-  letter-spacing: 1px;
+}
+
+/* CONTENT */
+.content {
+  max-width: 800px;
+  margin: 100px auto;
+  padding: 40px;
+}
+
+.muted {
+  color: var(--muted);
 }
 
 .back-link {
+  display: inline-block;
   margin-top: 40px;
-  text-decoration: none;
   color: var(--sage);
-  letter-spacing: 1px;
+  text-decoration: none;
+}
+
+/* ABOUT SPLIT */
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.image-placeholder {
+  background-size: cover;
+  background-position: center;
+  min-height: 300px;
+}
+
+.books {
+  background:
+    linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.9)),
+    url('https://images.unsplash.com/photo-1512820790803-83ca734da794');
 }
